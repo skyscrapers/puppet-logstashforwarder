@@ -32,11 +32,11 @@ class logstashforwarder::repo {
       }
 
       apt::source { 'logstashforwarder':
-        location    => 'http://packages.elasticsearch.org/logstashforwarder/debian',
-        release     => 'stable',
+        location    => 'http://skypackages.s3-website-eu-west-1.amazonaws.com/ubuntu/',
+        release     => 'logstashforwarder-prod',
         repos       => 'main',
-        key         => 'D88E42B4',
-        key_server  => 'pgp.mit.edu',
+        key         => '1BC1B9EF',
+        key_source  => 'http://skypackages.s3-website-eu-west-1.amazonaws.com/gpg.key',
         include_src => false,
       }
     }
